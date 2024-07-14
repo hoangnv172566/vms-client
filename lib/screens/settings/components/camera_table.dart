@@ -21,9 +21,7 @@ class CameraTableWidget extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children:[
-          Text("Cameras",
-          style: Theme.of(context).textTheme.titleMedium,
-          ),
+          Text("Cameras", style: Theme.of(context).textTheme.titleMedium),
           SizedBox(
             width: double.infinity,
             child: DataTable(
@@ -34,16 +32,16 @@ class CameraTableWidget extends StatelessWidget {
                 DataColumn(label: Text("Name")),
                 DataColumn(label: Text("Location")),
                 DataColumn(label: Text("Status"))
-              ]
+              ],
 
-              rows: List.generate(demoCameras.length,
-              (index) => r)
+              rows: List.generate(demoCameras.length, 
+                      (index) => cameraTableRow(demoCameras[index])),
 
             )
           ) 
         ]
       )
-    )
+    );
   }
 }
 
@@ -51,23 +49,10 @@ class CameraTableWidget extends StatelessWidget {
 DataRow cameraTableRow(Camera camera) {
   return DataRow(
     cells: [
-      DataCell(
-        Row(
-          children: [
-            SvgPicture.asset(
-              camera.icon!,
-              height: 30,
-              width: 30,
-            ),
-            Padding(
-              padding: const EdgeInsets.symmetric(horizontal: defaultPadding),
-              child: Text(camera.title!),
-            ),
-          ],
-        ),
-      ),
-      DataCell(Text(camera.date!)),
-      DataCell(Text(camera.size!)),
+      DataCell(Text(camera.id.toString())),
+      DataCell(Text(camera.name!)),
+      DataCell(Text(camera.location!)),
+      DataCell(Text(camera.status! ? "Active" : "Inactive"))
     ],
   );
 }

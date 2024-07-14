@@ -2,6 +2,7 @@
 import 'package:admin/responsive.dart';
 import 'package:flutter/material.dart';
 import '../../../constants.dart';
+import 'package:admin/screens/settings/components/dialog.dart';
 
 class Tab {
   final String? svgSrc, title;
@@ -32,18 +33,25 @@ class TabsWidgets extends StatelessWidget {
               "Categories",
               style: Theme.of(context).textTheme.titleMedium,
             ),
-            // ElevatedButton.icon(
-            //   style: TextButton.styleFrom(
-            //     padding: EdgeInsets.symmetric(
-            //       horizontal: defaultPadding * 1.5,
-            //       vertical:
-            //           defaultPadding / (Responsive.isMobile(context) ? 2 : 1),
-            //     ),
-            //   ),
-            //   onPressed: () {},
-            //   icon: Icon(Icons.add),
-            //   label: Text("Add New"),
-            // ),
+            ElevatedButton.icon(
+              style: TextButton.styleFrom(
+                padding: EdgeInsets.symmetric(
+                  horizontal: defaultPadding * 1.5,
+                  vertical:
+                      defaultPadding / (Responsive.isMobile(context) ? 2 : 1),
+                ),
+              ),
+              onPressed: () {
+                showDialog(
+                      context: context,
+                      builder: (BuildContext context) {
+                        return AddPersonDialog();
+                      },
+                    );
+              },
+              icon: Icon(Icons.add),
+              label: Text("Add New"),
+            ),
           ],
         )
       ],

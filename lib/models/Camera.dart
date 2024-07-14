@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 class Camera {
   
   final String? name, location;
+  
   final int? id;
   final bool? status;
 
