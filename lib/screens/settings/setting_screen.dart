@@ -1,12 +1,11 @@
 import 'package:admin/responsive.dart';
-import 'package:admin/screens/liveview/components/header.dart';
-import 'package:admin/screens/liveview/components/select_layout.dart';
-import 'package:admin/screens/liveview/components/camera.dart';
+import 'package:admin/screens/settings/components/header.dart';
+import 'package:admin/screens/settings/components/tabs.dart';
 import 'package:flutter/material.dart';
 
-import '../../constants.dart';
+import '../../../constants.dart';
 
-class LiveViewScreen extends StatelessWidget {
+class SettingScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SafeArea(
@@ -17,8 +16,7 @@ class LiveViewScreen extends StatelessWidget {
           children: [
             Header(),
             SizedBox(height: defaultPadding),
-            SelectLayout(),
-            CameraWg()
+            TabsWidgets()
           ],
         ),
       ),

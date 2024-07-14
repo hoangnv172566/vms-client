@@ -2,6 +2,7 @@ import 'package:admin/screens/dashboard/dashboard_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:admin/screens/liveview/liveview_screent.dart';
+import 'package:admin/screens/settings/setting_screen.dart';
 
 class SideMenu extends StatelessWidget {
   final ValueChanged<Widget> onMenuItemClicked;
@@ -36,7 +37,9 @@ class SideMenu extends StatelessWidget {
           DrawerListTile(
             title: "Settings",
             svgSrc: "assets/icons/menu_task.svg",
-            press: () {},
+            press: () {
+              onMenuItemClicked(SettingScreen());
+            },
           ),
           DrawerListTile(
             title: "AI Service",
